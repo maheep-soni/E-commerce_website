@@ -98,8 +98,9 @@ cartButton.classList.add(
 "cursor",
 "btn-margin"
 );
+cartButton.setAttribute("data-id",product._id)
 const cart = document.createElement("span");
- cart.classList.add("material-icons-outlined");
+cart.classList.add("material-icons-outlined");
 cart.innerText = "shopping_cart";
 cartButton.appendChild(cart)
 cartButton.innerText = 'add to cart'
@@ -113,3 +114,7 @@ cardContainer.appendChild(cardDetailsContainer)
 
     productsContainer.appendChild(cardContainer)
 }
+
+productsContainer.addEventListener("click",(event)=>{
+    console.log(event.target);
+})

@@ -1,6 +1,13 @@
 @import url("https://uilight.netlify.app/main.css");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+
+:root{
+  --primary-color:#334155
+}
+
+
+
 .card-vertical {
     width: 16rem;
   }
@@ -27,5 +34,37 @@
   .discount {
     font-size: 14px;
   }
- 
+ .heading{
+  background-color: var(--background-color);
+  padding: 0.5rem 3rem;
+  color: var(--primary-color);
+  border-bottom:1px solid rgb(0,0,0,0.1);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  /* position: absolute; */
+ }
+ .nav-icon{
+  font-size: 2rem;
+ }
+ .products-page{
+padding:8rem 3rem  3rem 3rem;
+display: flex;
+align-items: center;
+justify-content: center;
+/* display: flex; */
+ }
+ .search-box-input{
+  width: 18rem;
+  padding-left: 2rem;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  background-color: transparent;
+ }
+ .search-box-input:focus{
+  outline: none;
+ }
   

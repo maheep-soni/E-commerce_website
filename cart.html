@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart | e-store</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="heading  fixed top-0 left-0">
+        <div class="heading-title-icon d-flex  align-center">
+             <span class="nav-icon material-symbols-outlined">
+                  lightbulb_circle
+                  </span>
+            <!-- <img class="icon mr-1" src="/assets/image.png" alt="lightbul"> -->
+            <h1 class="heading-title">
+                 <a class="link" href="/">E-store</a>
+            </h1>
+        </div>
+        <div class="search-box-container relative">
+             <input class="search-box-input"  placeholder="Search here" >
+             <span class="material-symbols-outlined absolute top-0 left-0">
+                  search
+                  </span>
+        </div>
+        <nav class="navigation">
+             <ul class="list-non-bullet d-flex align-center gap-2">
+                  <!-- <li class="list-item-inline">
+                       <a href="#" class="link cursor">
+
+                       </a>
+                  </li> -->
+                  <li class="list-item-inline">
+                       <a href="#" class="link cursor">
+                            <span class="nav-icon material-symbols-outlined">
+                                 favorite
+                                 </span>
+                       </a>
+                  </li>
+                  <li class="list-item-inline">
+                       <a href="./cart.html" class="link cursor">
+                            <span class="nav-icon material-symbols-outlined">
+                                 shopping_cart
+                            </span>
+                       </a>
+                  </li>
+             </ul>
+        </nav>
+   </header>
+
+<main class="main">
+    <h2>Your cart</h2>
+    <div class="products-page  wrap gap" id="cart"></div>
+
+</main>
+   <script src="./cart.js"></script>
+</body>
+</html>
