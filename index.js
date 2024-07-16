@@ -2,6 +2,14 @@ import { products } from "./db/products.js";
 
 const productsContainer = document.getElementById('products')
 
+let cart = []
+
+const findProductInCart = (cart,prodId) =>{
+    const isProductInCart = 
+    cart && cart.length > 0 && cart.some(({_id}) => _id === prodId)
+    return isProductInCart
+}
+
 for (let product of products) {
     const cardContainer = document.createElement("div")
     cardContainer.classList.add(
@@ -103,7 +111,11 @@ const cart = document.createElement("span");
 cart.classList.add("material-icons-outlined");
 cart.innerText = "shopping_cart";
 cartButton.appendChild(cart)
-cartButton.innerText = 'add to cart'
+
+const buttonText = document.createElement("span")
+buttonText.innerText = 'add to cart'
+cartButton.appendChild(buttonText)
+
 ctaButton.appendChild(cartButton)
 cardDetailsContainer.appendChild(ctaButton)
 
@@ -116,5 +128,19 @@ cardContainer.appendChild(cardDetailsContainer)
 }
 
 productsContainer.addEventListener("click",(event)=>{
-    console.log(event.target);
+    const isProductInCart = findProductInCart(cart,event.target.dataset.id)
+    if(!isProductInCart){
+        const productToAddtoCart = products.filter(
+            ({_id})=> _id === event.target.dataset.id
+        )
+        cart = [...cart,...productToAddtoCart]
+        console.log(cart);
+        const cartButton = event.target;
+        cartButton.innerHTML = " Go to cart <span class='material-icons-outlined'>              shopping_cart</span>"
+    }
+    else{
+        location.href = "cart.html"
+    }
+
+    
 })
